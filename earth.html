@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Page setup and metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title -->
+    <title>Planet Earth</title>
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Skip link for keyboard navigation -->
+    <a class="skip-link" href="#earth">Skip to main content</a>
+
+    <!-- Background looping video -->
+    <video class="bg-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+        <source src="media/earth_bg.mp4" type="video/mp4">
+    </video>
+
+    <!-- Fixed navigation bar -->
+    <nav aria-label="Main navigation">
+        <a class="nav-logo" href="index.html">Big <span>Planetarium</span></a>
+        <!-- Navigation menu -->
+        <ul class="nav-links">
+            <li><a href="index.html">Milky Way</a></li>
+            <li><a href="earth.html" aria-current="page">Earth</a></li>
+            <li><a href="mercury.html">Mercury</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content wrapper -->
+    <main id="main-content">
+
+        <header class="hero">
+            <div class="hero-nebula" aria-hidden="true"></div>
+
+            <!-- Earth logo animation -->
+            <video class="planet-logo" autoplay muted loop playsinline
+                aria-label="Animated rotating globe of planet Earth">
+                <source src="media/earth_logo.mp4" type="video/mp4">
+            </video>
+
+            <!-- Section badge -->
+            <p class="hero-badge" aria-hidden="true">Planet Profile</p>
+            <h1 class="hero-title">Planet <span class="highlight">Earth</span></h1>
+            <p class="hero-sub">
+                The Blue Marble. Our home. The only known world in the universe to harbour life.
+            </p>
+
+            <!-- Button linking to the Earth overview -->
+            <a href="#earth" class="hero-btn">Begin Exploring</a>
+            <div class="hero-scroll" aria-hidden="true"><span class="arrow">↓</span><span>Scroll</span></div>
+        </header>
+
+        <!-- Earth overview section -->
+        <section id="earth" class="overview" aria-labelledby="overview-heading" tabindex="-1">
+            <video class="overview-img" autoplay muted loop playsinline
+                aria-label="Time-lapse video of Earth from orbit showing clouds and oceans">
+                <source src="media/earth_video.mp4" type="video/mp4">
+            </video>
+
+            <!-- Overview text -->
+            <div class="overview-text">
+                <p class="section-label" aria-hidden="true">Planet Overview</p>
+                <h2 class="section-title" id="overview-heading">The Blue Marble</h2>
+                <p class="section-body">
+                    Earth is the third planet from the Sun and the only astronomical object known to harbour life.
+                </p>
+                <p class="section-body">
+                    71% of Earth's surface is covered by water, giving it its iconic blue appearance from space.
+                </p>
+            </div>
+        </section>
+
+        <!-- Earth statistics section -->
+        <section class="stats" aria-label="Earth key statistics">
+            <div class="stats-grid">
+                <!-- Stat cards -->
+                <div class="stat-item">
+                    <span class="stat-num" aria-label="4.5 billion">4.5B</span>
+                    <span class="stat-label">Years Old</span>
+                </div>
+
+                <div class="stat-item">
+                    <span class="stat-num">71%</span>
+                    <span class="stat-label">Water Surface</span>
+                </div>
+
+                <div class="stat-item">
+                    <span class="stat-num">365.25</span>
+                    <span class="stat-label">Days / Year</span>
+                </div>
+
+                <div class="stat-item">
+                    <span class="stat-num" aria-label="8.8 billion">8.8B</span>
+                    <span class="stat-label">Population</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Earth facts section -->
+        <section class="facts-section" aria-labelledby="facts-heading">
+            <div class="facts-header">
+                <p class="section-label" aria-hidden="true">Did You Know?</p>
+                <h2 class="section-title" id="facts-heading">Earth's Amazing Facts</h2>
+            </div>
+
+            <!-- Facts grid -->
+            <div class="facts-container" role="region" aria-label="Earth facts">
+                <div class="facts-grid">
+                    <!-- Fact cards -->
+                    <article class="fact-card">
+                        <h3 class="fact-title">The Oceans</h3>
+                        <p class="fact-text">Earth's oceans contain 1.335 billion km³ of water.</p>
+                    </article>
+
+                    <article class="fact-card">
+                        <h3 class="fact-title">Magnetic Field</h3>
+                        <p class="fact-text">Generated by the liquid iron outer core, it shields Earth from harmful
+                            solar winds.</p>
+                    </article>
+
+                    <article class="fact-card">
+                        <h3 class="fact-title">Tectonics</h3>
+                        <p class="fact-text">Earth's crust is divided into moving plates that shape continents and cause
+                            earthquakes.</p>
+                    </article>
+
+                    <article class="fact-card">
+                        <h3 class="fact-title">Atmosphere</h3>
+                        <p class="fact-text">Protects life from radiation and regulates temperature.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Earth's layers section -->
+        <section class="layers-section" aria-labelledby="layers-heading">
+            <div class="layers-header">
+                <p class="section-label" aria-hidden="true">Internal Structure</p>
+                <h2 class="section-title" id="layers-heading">Layers of the Earth</h2>
+            </div>
+            <!-- Grid of layer cards -->
+            <div class="layers-grid">
+                <div class="layer-card">
+                    <span class="layer-num" aria-label="Layer 1">Layer 01</span>
+                    <div class="layer-name">Crust</div>
+                    <p class="layer-desc">The outermost layer, ranging from 5 to 70 km thick.</p>
+                </div>
+
+                <div class="layer-card">
+                    <span class="layer-num" aria-label="Layer 2">Layer 02</span>
+                    <div class="layer-name">Upper Mantle</div>
+                    <p class="layer-desc">Semi-solid rock that flows slowly over millions of years.</p>
+                </div>
+
+                <div class="layer-card">
+                    <span class="layer-num" aria-label="Layer 3">Layer 03</span>
+                    <div class="layer-name">Lower Mantle</div>
+                    <p class="layer-desc">Dense and rigid rock under extreme pressure.</p>
+                </div>
+
+                <div class="layer-card">
+                    <span class="layer-num" aria-label="Layer 4">Layer 04</span>
+                    <div class="layer-name">Outer Core</div>
+                    <p class="layer-desc">Liquid iron and nickel — generates Earth's magnetic field.</p>
+                </div>
+
+                <div class="layer-card">
+                    <span class="layer-num" aria-label="Layer 5">Layer 05</span>
+                    <div class="layer-name">Inner Core</div>
+                    <p class="layer-desc">Solid metal sphere about the size of the Moon.</p>
+                </div>
+
+                <div class="layer-card">
+                    <span class="layer-num" aria-label="Bonus layer">Bonus</span>
+                    <div class="layer-name">Atmosphere</div>
+                    <p class="layer-desc">Earth's protective gas layer extending hundreds of kilometres above the
+                        surface.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Earth's atmosphere section -->
+        <section class="atmos-section" aria-labelledby="atmos-heading">
+            <div class="atmos-inner">
+                <!-- Text content -->
+                <div class="atmos-text">
+                    <p class="section-label" aria-hidden="true">Life Support System</p>
+                    <h2 class="section-title" id="atmos-heading">Earth's Atmosphere</h2>
+                    <p class="section-body">Earth's atmosphere is a thin but vital layer of gases that makes life
+                        possible. It keeps temperatures stable, allows us to breathe, and protects us from the Sun's
+                        harmful radiation.</p>
+                    <p class="section-body">The ozone layer, found in the stratosphere, filters out most of the Sun's
+                        damaging ultraviolet rays.</p>
+                </div>
+                <!-- Atmosphere image -->
+                <img class="atmos-img" src="media/earth_atmosphere.jpg"
+                    alt="Earth seen from orbit showing the thin blue line of the atmosphere against the darkness of space"
+                    loading="lazy">
+            </div>
+        </section>
+
+        <!-- Back button to return to Milky Way page -->
+        <div class="back-section">
+            <a href="index.html" class="back-btn">← Back to Milky Way</a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Big Planetarium &middot; Bristol, UK</p>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="backToTop">
+        <img src="media/arrow.png" alt="Back to top">
+    </button>
+
+    <!-- Main JavaScript file -->
+    <script src="script.js"></script>
+</body>
+
+</html>

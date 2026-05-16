@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Page setup and metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Planetarium – The Milky Way</title>
+    <!-- Global stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Skip link for keyboard users -->
+    <a class="skip-link" href="#milkyway">Skip to main content</a>
+
+    <!-- Looping background video -->
+    <video class="bg-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+        <source src="media/milkyway_bg.mp4" type="video/mp4">
+    </video>
+
+    <!-- Main navigation bar on top -->
+    <nav aria-label="Main navigation">
+        <a class="nav-logo" href="index.html">Big <span>Planetarium</span></a>
+        <!-- Navigation links -->
+        <ul class="nav-links">
+            <li><a href="index.html" aria-current="page">Milky Way</a></li>
+            <li><a href="earth.html">Earth</a></li>
+            <li><a href="mercury.html">Mercury</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+
+        <!-- Main Welcome banner -->
+        <header class="hero">
+            <!-- Animated background overlay -->
+            <div class="hero-nebula" aria-hidden="true"></div>
+
+            <!-- Main title and introduction -->
+            <h1 class="hero-title">Welcome to the<br><span class="highlight">Milky Way</span></h1>
+            <p class="hero-sub">Take a cinematic journey across our galaxy, spanning 100,000 light years of wonder.</p>
+            <a href="#milkyway" class="hero-btn">Begin Exploring</a>
+            <!-- Scroll indicator -->
+            <div class="hero-scroll" aria-hidden="true">
+                <span class="arrow">↓</span>
+                <span>Scroll</span>
+            </div>
+        </header>
+
+        <!-- Milky Way introduction -->
+        <section id="milkyway" class="overview" aria-labelledby="milkyway-heading" tabindex="-1">
+            <!-- Milky Way video -->
+            <video class="overview-img" autoplay muted loop playsinline
+                aria-label="Animated view of the Milky Way galaxy">
+                <source src="media/milkyway_video.mp4" type="video/mp4">
+            </video>
+
+            <!-- Overview text -->
+            <div class="overview-text">
+                <p class="section-label" aria-hidden="true">Galaxy Overview</p>
+                <h2 class="section-title" id="milkyway-heading">Our Home in the Cosmos</h2>
+                <p class="section-body">
+                    The Milky Way is a barred spiral galaxy 100,000 light-years across containing
+                    100 - 400 billion stars. Our Solar System orbits in the Orion Arm, 26,000 light-years from the
+                    centre.
+                </p>
+            </div>
+        </section>
+
+        <!-- Milky Way statistics section -->
+        <section class="stats" aria-label="Milky Way key statistics">
+            <div class="stats-grid">
+
+                <!-- Individual stats -->
+                <div class="stat-item">
+                    <span class="stat-num" aria-label="100 thousand">100K</span>
+                    <span class="stat-label">Light-Years Wide</span>
+                </div>
+
+                <div class="stat-item">
+                    <span class="stat-num" aria-label="400 billion">400B</span>
+                    <span class="stat-label">Stars</span>
+                </div>
+
+                <div class="stat-item">
+                    <span class="stat-num" aria-label="13.6 billion">13.6B</span>
+                    <span class="stat-label">Years Old</span>
+                </div>
+
+                <div class="stat-item">
+                    <span class="stat-num" aria-label="220 kilometers per second">220</span>
+                    <span class="stat-label">km/s Galactic Speed</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Facts section -->
+        <section class="facts-section" aria-labelledby="facts-heading">
+            <!-- Section header -->
+            <div class="facts-header">
+                <p class="section-label" aria-hidden="true">Fascinating Facts</p>
+                <h2 class="section-title" id="facts-heading">Things You Need to Know</h2>
+            </div>
+
+            <!-- Facts grid container -->
+            <div class="facts-container" role="region" aria-label="Milky Way facts">
+                <div class="facts-grid">
+
+                    <!-- Fact cards -->
+                    <article class="fact-card">
+                        <h3 class="fact-title">Spiral Structure</h3>
+                        <p class="fact-text">The Milky Way is a barred spiral galaxy with four sweeping arms extending
+                            from its central bar.</p>
+                    </article>
+
+                    <article class="fact-card">
+                        <h3 class="fact-title">Galactic Halo</h3>
+                        <p class="fact-text">A vast, invisible halo of dark matter surrounds the Milky Way and contains
+                            extremely ancient stellar populations.</p>
+                    </article>
+
+                    <article class="fact-card">
+                        <h3 class="fact-title">Star Formation</h3>
+                        <p class="fact-text">Around one or two new stars form each year inside dense molecular clouds
+                            known as stellar nurseries.</p>
+                    </article>
+
+                    <article class="fact-card">
+                        <h3 class="fact-title">High-Speed Orbit</h3>
+                        <p class="fact-text">Our Solar System travels at around 220 km/s through the Milky Way,
+                            completing a full galactic orbit every 225 - 250 million years.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Planet links section -->
+        <section class="planets-section" id="planets" aria-labelledby="planets-heading">
+            <!-- Section heading for planet cards -->
+            <div class="planets-header">
+                <h2 class="section-title" id="planets-heading">Explore Planets</h2>
+            </div>
+
+            <!-- Grid of planet cards -->
+            <div class="planets-grid">
+                <!-- Earth card -->
+                <a class="planet-card" href="earth.html" aria-label="Explore Earth — Habitable planet">
+                    <div class="planet-name">Earth</div>
+                    <div class="planet-type">Habitable Planet</div>
+                    <span class="explore-tag" aria-hidden="true">Explore →</span>
+                </a>
+                <!-- Mercury card -->
+                <a class="planet-card" href="mercury.html" aria-label="Explore Mercury — Rocky planet">
+                    <div class="planet-name">Mercury</div>
+                    <div class="planet-type">Rocky Planet</div>
+                    <span class="explore-tag" aria-hidden="true">Explore →</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Big Planetarium &middot; Bristol, UK</p>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="backToTop">
+        <img src="media/arrow.png" alt="Back to top">
+    </button>
+
+    <!-- JavaScript file -->
+    <script src="script.js"></script>
+</body>
+
+</html>

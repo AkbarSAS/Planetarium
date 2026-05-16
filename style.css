@@ -1,0 +1,791 @@
+/* GLOBAL RESET */
+/* Removes default browser margin, padding and sets box-sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* BASE STYLES */
+/* Sets smooth scrolling, base font, background colour and text colour */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: sans-serif;
+    background: #020d1a;
+    color: #eef9ff;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* ACCESSIBILITY */
+/* Skip link appears on keyboard focus, hidden off-screen by default */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 9999;
+    background: #48cae4;
+    color: #020d1a;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0 0 8px 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: top 0.2s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+:focus-visible {
+    outline: 3px solid #48cae4;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* BACKGROUND VIDEO */
+/* Fixed behind all content, semi-transparent so text remains readable */
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+/* NAVIGATION */
+/* Fixed top bar with blur effect and underline animation on active/hover links */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(0, 0, 15, 0.55);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(72, 202, 228, 0.12);
+}
+
+.nav-logo {
+    font-size: 1.35rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    color: #caf0f8;
+    text-transform: uppercase;
+}
+
+.nav-logo span {
+    color: #48cae4;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #a8d4e6;
+    padding-bottom: 4px;
+    position: relative;
+    transition: color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #48cae4;
+    border-radius: 2px;
+    transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+    color: #ffffff;
+}
+
+.nav-links a:hover::after,
+.nav-links a[aria-current="page"]::after {
+    width: 100%;
+}
+
+/* HERO SECTION */
+/* Full viewport height banner with animated nebula overlay and fade-in elements */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    z-index: 1;
+}
+
+.hero-nebula {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(10, 74, 94, 0.6), transparent 70%),
+        radial-gradient(ellipse 50% 40% at 20% 70%, rgba(11, 61, 110, 0.45), transparent 60%),
+        radial-gradient(ellipse 40% 30% at 80% 20%, rgba(0, 180, 216, 0.2), transparent 60%);
+    animation: nebulaPulse 10s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes nebulaPulse {
+    from {
+        opacity: 0.7;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+.hero-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #48cae4;
+    border: 1px solid rgba(72, 202, 228, 0.4);
+    border-radius: 999px;
+    padding: 0.4rem 1.2rem;
+    margin-bottom: 1.4rem;
+    animation: fadeSlideDown 1s ease 0.2s both;
+}
+
+.hero-title {
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 900;
+    line-height: 1.05;
+    animation: fadeSlideDown 1s ease 0.4s both;
+}
+
+.hero-title .highlight {
+    background: linear-gradient(135deg, #48cae4, #caf0f8, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-sub {
+    margin-top: 1.4rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 300;
+    color: #b8d8e8;
+    max-width: 580px;
+    line-height: 1.8;
+    animation: fadeSlideDown 1s ease 0.6s both;
+}
+
+.hero-btn {
+    margin-top: 2.5rem;
+    padding: 1rem 2.8rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #0a4a5e, #0b3d6e);
+    color: #caf0f8;
+    border: 1px solid rgba(72, 202, 228, 0.35);
+    box-shadow: 0 0 30px rgba(0, 180, 216, 0.4);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    animation: fadeSlideDown 1s ease 0.8s both;
+    cursor: pointer;
+}
+
+.hero-btn:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 0 50px rgba(72, 202, 228, 0.6);
+}
+
+.hero-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: #a8d4e6;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    animation: bounceY 2s ease-in-out infinite;
+}
+
+.hero-scroll .arrow {
+    font-size: 1.3rem;
+}
+
+@keyframes bounceY {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(8px);
+    }
+}
+
+@keyframes fadeSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.planet-logo {
+    width: clamp(160px, 22vw, 260px);
+    height: clamp(160px, 22vw, 260px);
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 60px rgba(0, 180, 216, 0.5), 0 0 120px rgba(0, 180, 216, 0.25);
+    margin-bottom: 2.5rem;
+}
+
+/* SHARED SECTION STYLES */
+/* Reusable label, title and body text styles used across all pages */
+section {
+    position: relative;
+    z-index: 1;
+}
+
+.section-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #48cae4;
+    margin-bottom: 0.8rem;
+}
+
+.section-title {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.section-body {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #b8d8e8;
+    line-height: 1.9;
+    max-width: 640px;
+}
+
+/* OVERVIEW SECTION */
+/* Two-column grid layout showing a video/image alongside descriptive text */
+.overview {
+    padding: 7rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.overview-img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 1px solid rgba(72, 202, 228, 0.2);
+    box-shadow: 0 0 60px rgba(10, 74, 94, 0.7);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.overview-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 100px rgba(0, 180, 216, 0.45);
+}
+
+.overview-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+/* STATS SECTION */
+/* Four-column grid of key facts, numbers animated by JavaScript on scroll */
+.stats {
+    background: linear-gradient(135deg, rgba(11, 61, 110, 0.3), rgba(10, 74, 94, 0.3));
+    border-top: 1px solid rgba(72, 202, 228, 0.1);
+    border-bottom: 1px solid rgba(72, 202, 228, 0.1);
+    padding: 4rem 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.stat-item:hover {
+    transform: translateY(-6px);
+}
+
+.stat-num {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    background: linear-gradient(135deg, #48cae4, #caf0f8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #a8d4e6;
+}
+
+/* FACTS CARDS */
+/* Grid of glassmorphism cards displaying interesting facts about each topic */
+.facts-section {
+    padding: 7rem 3rem;
+}
+
+.facts-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 3rem;
+}
+
+.facts-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    justify-items: center;
+}
+
+.fact-card {
+    background: rgba(11, 61, 110, 0.22);
+    border: 1px solid rgba(72, 202, 228, 0.15);
+    border-radius: 16px;
+    padding: 2.5rem;
+    min-height: 200px;
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+        box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.fact-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 20px rgba(72, 202, 228, 0.25);
+}
+
+.fact-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #caf0f8;
+}
+
+.fact-text {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: #b8d8e8;
+    line-height: 1.6;
+}
+
+/* LAYERS SECTION */
+/* Cards showing internal structure of Earth or Mercury, with cyan left border */
+.layers-section {
+    padding: 7rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.layers-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 3rem;
+}
+
+.layers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.layers-grid--two-col {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.layer-card {
+    background: rgba(11, 61, 110, 0.22);
+    border: 1px solid rgba(72, 202, 228, 0.15);
+    border-left: 4px solid #48cae4;
+    border-radius: 16px;
+    padding: 2rem;
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.layer-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 50px rgba(10, 74, 94, 0.5);
+}
+
+.layer-num {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #a8d4e6;
+}
+
+.layer-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #caf0f8;
+}
+
+.layer-desc {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: #b8d8e8;
+    line-height: 1.75;
+}
+
+/* ATMOSPHERE SECTION */
+/* Two-column layout with descriptive text and an image side by side */
+.atmos-section {
+    padding: 7rem 3rem;
+    background: linear-gradient(180deg, transparent, rgba(11, 61, 110, 0.2), transparent);
+}
+
+.atmos-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.atmos-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.atmos-img {
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid rgba(72, 202, 228, 0.2);
+    box-shadow: 0 0 60px rgba(0, 180, 216, 0.3);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.atmos-img:hover {
+    transform: scale(1.03);
+}
+
+/* BACK BUTTON */
+/* Centred ghost button linking back to the Milky Way homepage */
+.back-section {
+    padding: 4rem 3rem;
+    text-align: center;
+}
+
+.back-btn {
+    padding: 0.85rem 2.4rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 1px solid rgba(72, 202, 228, 0.4);
+    color: #48cae4;
+    background: transparent;
+    transition:
+        background 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+        color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+        transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.back-btn:hover {
+    background: rgba(72, 202, 228, 0.1);
+    transform: translateY(-3px);
+}
+
+/* PLANETS SECTION */
+/* Grid of clickable planet cards linking to individual planet pages */
+.planets-section {
+    padding: 7rem 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.planets-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.planets-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.planet-card {
+    width: 260px;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(72, 202, 228, 0.15);
+    backdrop-filter: blur(6px);
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+        box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+        border-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.planet-card:hover {
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 16px 50px rgba(10, 74, 94, 0.5);
+    border-color: rgba(72, 202, 228, 0.5);
+}
+
+.planet-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #caf0f8;
+}
+
+.planet-type {
+    font-size: 0.9rem;
+    color: #a8d4e6;
+}
+
+.explore-tag {
+    margin-top: 0.6rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #48cae4;
+}
+
+/* FOOTER */
+/* Centred copyright bar */
+footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 3rem;
+    border-top: 1px solid rgba(180, 220, 255, 0.35);
+    box-shadow: 0 -2px 12px rgba(180, 220, 255, 0.15);
+    color: #a8d4e6;
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+}
+
+/* SCROLL MARGIN FOR ANCHORS */
+/* Prevents the fixed nav from overlapping section headings when jumping to an anchor */
+#milkyway,
+#earth,
+#mercury {
+    scroll-margin-top: 90px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    nav {
+        padding: 1rem 1.5rem;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+    }
+
+    .overview,
+    .atmos-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 5rem 1.5rem;
+    }
+
+    .layers-grid,
+    .layers-grid--two-col {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .facts-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .facts-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        padding: 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .nav-links a {
+        font-size: 0.75rem;
+    }
+
+    .layers-grid,
+    .layers-grid--two-col {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .layers-section,
+    .planets-section,
+    .facts-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .facts-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Back to Top section */
+#backToTop {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    padding: 1rem;
+    border-radius: 50%;
+    border: 1px solid rgba(72, 202, 228, 0.4);
+    background: rgba(2, 13, 26, 0.85);
+    backdrop-filter: blur(6px);
+    cursor: pointer;
+    z-index: 999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+#backToTop img {
+    width: 22px;
+    height: 22px;
+    pointer-events: none;
+    filter: invert(1);
+}

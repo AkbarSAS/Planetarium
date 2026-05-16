@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Page setup and metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet Mercury</title>
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Skip link for keyboard navigation -->
+    <a class="skip-link" href="#mercury">Skip to main content</a>
+
+    <!-- Background looping video -->
+    <video class="bg-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+        <source src="media/mercury_bg.mp4" type="video/mp4">
+    </video>
+
+    <!-- Navigation bar -->
+    <nav aria-label="Main navigation">
+        <a class="nav-logo" href="index.html">Big <span>Planetarium</span></a>
+        <!-- Navigation menu -->
+        <ul class="nav-links">
+            <li><a href="index.html">Milky Way</a></li>
+            <li><a href="earth.html">Earth</a></li>
+            <li><a href="mercury.html" aria-current="page">Mercury</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content wrapper -->
+    <main id="main-content">
+
+        <header class="hero">
+            <div class="hero-nebula" aria-hidden="true"></div>
+
+            <!-- Mercury logo animation -->
+            <video class="planet-logo" autoplay muted loop playsinline
+                aria-label="Animated rotating globe of planet Mercury">
+                <source src="media/mercury_logo.mp4" type="video/mp4">
+            </video>
+
+            <!-- Section badge -->
+            <p class="hero-badge" aria-hidden="true">Planet Profile</p>
+            <!-- Main title -->
+            <h1 class="hero-title">Planet <span class="highlight">Mercury</span></h1>
+            <p class="hero-sub">
+                The Swift Planet. The smallest, fastest, and closest world to the Sun.
+            </p>
+            <!-- Button linking to Mercury overview -->
+            <a href="#mercury" class="hero-btn">Begin Exploring</a>
+            <!-- Scroll indicator -->
+            <div class="hero-scroll" aria-hidden="true"><span class="arrow">↓</span><span>Scroll</span></div>
+        </header>
+
+        <!-- Mercury overview section -->
+        <section id="mercury" class="overview" aria-labelledby="overview-heading" tabindex="-1">
+            <!-- Mercury video -->
+            <video class="overview-img" autoplay muted loop playsinline
+                aria-label="Animated view of Mercury rotating in space">
+                <source src="media/mercury_video.mp4" type="video/mp4">
+            </video>
+            <!-- Overview text -->
+            <div class="overview-text">
+                <p class="section-label" aria-hidden="true">Planet Overview</p>
+                <h2 class="section-title" id="overview-heading">The Swift Planet</h2>
+
+                <p class="section-body">
+                    Mercury is the smallest planet in the Solar System and the closest to the Sun.
+                </p>
+                <p class="section-body">
+                    With extreme temperatures and a cratered surface, it resembles Earth's Moon but orbits far faster.
+                </p>
+            </div>
+        </section>
+
+        <!-- Mercury statistics section -->
+        <section class="stats" aria-label="Mercury key statistics">
+            <!-- Stat cards -->
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-num" aria-label="0.38 times Earth gravity">0.38x</span>
+                    <span class="stat-label">Earth Gravity</span>
+                </div>
+
+                <div class="stat-item">
+                    <span class="stat-num" aria-label="430 degrees Celsius">430°C</span>
+                    <span class="stat-label">Day Temperature</span>
+                </div>
+
+                <div class="stat-item">
+                    <span class="stat-num" aria-label="minus 180 degrees Celsius">−180°C</span>
+                    <span class="stat-label">Night Temperature</span>
+                </div>
+
+                <div class="stat-item">
+                    <span class="stat-num">88</span>
+                    <span class="stat-label">Days / Year</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Mercury facts section -->
+        <section class="facts-section" aria-labelledby="facts-heading">
+            <div class="facts-header">
+                <p class="section-label" aria-hidden="true">Did You Know?</p>
+                <h2 class="section-title" id="facts-heading">Mercury's Amazing Facts</h2>
+            </div>
+
+            <!-- Facts grid -->
+            <div class="facts-container" role="region" aria-label="Mercury facts">
+                <div class="facts-grid">
+                    <!-- Fact cards-->
+                    <article class="fact-card">
+                        <h3 class="fact-title">Fastest Orbit</h3>
+                        <p class="fact-text">Mercury completes a full orbit around the Sun in just 88 days.</p>
+                    </article>
+
+                    <article class="fact-card">
+                        <h3 class="fact-title">Double Sunrise</h3>
+                        <p class="fact-text">The Sun can rise, set, and rise again due to Mercury's unusual rotation
+                            speed relative to its orbit.</p>
+                    </article>
+
+                    <article class="fact-card">
+                        <h3 class="fact-title">No Atmosphere</h3>
+                        <p class="fact-text">Mercury has almost no atmosphere, causing extreme temperature swings
+                            between day and night.</p>
+                    </article>
+
+                    <article class="fact-card">
+                        <h3 class="fact-title">Iron Core</h3>
+                        <p class="fact-text">Over 70% of Mercury's mass is its massive metallic core.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mercury layers section -->
+        <section class="layers-section" aria-labelledby="layers-heading">
+            <div class="layers-header">
+                <p class="section-label" aria-hidden="true">Internal Structure</p>
+                <h2 class="section-title" id="layers-heading">Layers of Mercury</h2>
+            </div>
+
+            <!-- Grid of layer cards -->
+            <div class="layers-grid layers-grid--two-col">
+                <div class="layer-card">
+                    <span class="layer-num" aria-label="Layer 1">Layer 01</span>
+                    <div class="layer-name">Crust</div>
+                    <p class="layer-desc">A thin rocky layer covered in craters and ridges.</p>
+                </div>
+                <div class="layer-card">
+                    <span class="layer-num" aria-label="Layer 2">Layer 02</span>
+                    <div class="layer-name">Mantle</div>
+                    <p class="layer-desc">A silicate layer surrounding the core.</p>
+                </div>
+                <div class="layer-card">
+                    <span class="layer-num" aria-label="Layer 3">Layer 03</span>
+                    <div class="layer-name">Outer Core</div>
+                    <p class="layer-desc">Partially molten metal generating Mercury's weak magnetic field.</p>
+                </div>
+                <div class="layer-card">
+                    <span class="layer-num" aria-label="Layer 4">Layer 04</span>
+                    <div class="layer-name">Inner Core</div>
+                    <p class="layer-desc">A large solid iron core making up most of the planet's mass.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mercury exosphere section -->
+        <section class="atmos-section" aria-labelledby="atmos-heading">
+            <div class="atmos-inner">
+
+                <div class="atmos-text">
+                    <!-- Text content -->
+                    <p class="section-label" aria-hidden="true">Surface &amp; Exosphere</p>
+                    <h2 class="section-title" id="atmos-heading">Mercury's Thin Exosphere</h2>
+                    <p class="section-body">Mercury has no true atmosphere but only a thin exosphere of sodium, oxygen,
+                        and hydrogen.</p>
+                    <p class="section-body">This allows solar wind to strike the surface directly, shaping its
+                        landscape.</p>
+                </div>
+
+                <!-- Atmosphere image -->
+                <img class="atmos-img" src="media/mercury_surface.jpg"
+                    alt="Close-up of Mercury's heavily cratered grey and brown surface illuminated against the darkness of space"
+                    loading="lazy">
+            </div>
+        </section>
+
+        <!-- Back button to return to Milky Way -->
+        <div class="back-section">
+            <a href="index.html" class="back-btn">← Back to Milky Way</a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Big Planetarium &middot; Bristol, UK</p>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="backToTop">
+        <img src="media/arrow.png" alt="Back to top">
+    </button>
+
+    <!-- JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
